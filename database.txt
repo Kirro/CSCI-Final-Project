@@ -1,0 +1,33 @@
+Tables:
+
+customers
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| username    | varchar(20) | YES  |     | NULL    |       |
+| password    | char(32)    | YES  |     | NULL    |       |
+| email       | varchar(20) | YES  |     | NULL    |       |
+| name        | varchar(20) | YES  |     | NULL    |       |
+| address     | varchar(20) | YES  |     | NULL    |       |
+| phonenumber | varchar(20) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+inventory
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| itemID | int(20)      | YES  |     | NULL    |       |
+| item   | varchar(20)  | YES  |     | NULL    |       |
+| price  | double(20,2) | YES  |     | NULL    |       |
+| stock  | int(20)      | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+
+orders
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| orderID  | int(20)     | YES  |     | NULL    |       |
+| username | varchar(20) | YES  |     | NULL    |       |
+| item     | int(20)     | YES  |     | NULL    |       |
+| amount   | int(20)     | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
