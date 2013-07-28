@@ -1,9 +1,15 @@
+<?php
+//Changes: Document must be .php to use php scripts. Field name attributes changed to match existing login scripts.
+//Minor changes to match W3C standards
+//Using unset and isset rather than != ""
+//include("config.php");
+include("cart.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php include("config.php");?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Online Store</title>
 
 <link href="css/design.css" rel="stylesheet" type="text/css" />
 </head>
@@ -11,15 +17,15 @@
 <body >
 <div class="container">
 <div class="sidebar_left">
-<img src="panther.jpg" height="127" width="206" />
-<form action="login_check.php" method="post" onsubmit="return check_login_form(this)">
+<img src="panther.jpg" height="200" width="200" alt="panther" align="middle"/>
+<form action="login_attempt.php" method="post">
 					<table width="178" border="0" align="center" cellpadding="0" cellspacing="0">
 					
 					
-					<!-- <?php
-						if ($_SESSION['msg'] != "" && $_SESSION['tmp']==1) 
+					<?php
+						if (isset($_SESSION['msg']) && $_SESSION['tmp']==1)
 						{
-					?>-->
+					?>
 						<tr class="login-box-bg">
 					  		<td>&nbsp;</td>
 					  		<td class="error-msg" ><?php echo $_SESSION['msg']; ?> &nbsp; </td>
@@ -38,7 +44,7 @@
 					
 					<tr class="login-box-bg">
 	                    <td colspan="3">
-							&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="unm"  id="unm" class="user-inputbox">						</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="text" name="username"  id="unm" class="user-inputbox"></label>						</td>
                     </tr>
 					
 					<tr class="login-box-bg">
@@ -48,13 +54,13 @@
 					
 					<tr class="login-box-bg">
 	                    <td colspan="3">
-							&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="pswd" id="pswd" class="user-inputbox">						</td>
+							&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="password" name="password" id="pswd" class="user-inputbox"></label>					</td>
                     </tr>
 					<tr class="login-box-bg">
 	                    <td colspan="3" height="5"></td>
                     </tr>
 					<tr class="login-box-bg">
-	                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<a href="forgot_password.php" class="forget">Forget Password</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="forget">Register Now</a></td>
+	                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<a href="forgot_password.php" class="forget">Forgot Password?</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="forget">Register Now</a></td>
                     </tr>
 					<tr class="login-box-bg">
 	                    <td height="5" colspan="3"></td>
@@ -77,7 +83,7 @@
     <td width="60" align="center" valign="middle"><a href="#">Home</a></td>
     <td width="62" align="center" valign="middle"><a href="#">About Us</a></td>
     <td width="93" align="center" valign="middle"><a href="#">Category</a></td>
-    <td width="88" align="center" valign="middle"><a href="#">Upload</a></td>
+    <td width="88" align="center" valign="middle"><a href="#">Shopping Cart</a></td>
     <td width="71" align="center" valign="middle" class="no-border"><a href="about_us.php">Profile</a></td>
       </tr>
   <tr>
