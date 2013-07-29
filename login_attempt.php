@@ -13,6 +13,7 @@ $rows = mysql_num_rows($result);
 if ($rows == 1)
 {
     $_SESSION['MSG'] = "Welcome " . $username;
+    $_SESSION['username'] = $username;
     header ("location: index.php");
 }
 else
@@ -20,7 +21,3 @@ else
 $_SESSION['MSG'] = "Login Failed";
 header ("location: index.php");
 }
-?>
-
-</body>
-</html>

@@ -3,8 +3,8 @@
 //Minor changes to match W3C standards
 //Using unset and isset rather than != ""
 //include("config.php");
-session_start();
 include("cart.php");
+session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +16,18 @@ include("cart.php");
 </head>
 
 <body >
-<div class="container">
+<div class="wrapper" id="footer">
+    <div style="width:100%;"><ul class="menu">
+            <li><a href="index.php">Home</a></li>
+            <li ><a href="about.php">About Us</a></li>
+            <li><a href="store.php">Store</a></li>
+            <li><a href="shoppingcart.php">Shopping Cart</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <?php if(isset($_SESSION['username'])) echo '<li><a href="logout.php">Logout</a></li>';?>
+        </ul>
+    </div>
+</div>
+<div class="container2">
 <div class="sidebar_left">
 <img src="img/panther.jpg" height="200" width="200" alt="panther" align="middle"/><br/><br/>
 <form action="login_attempt.php" method="post">
@@ -56,7 +67,7 @@ include("cart.php");
 	                    <td colspan="3" height="5"></td>
                     </tr>
 					<tr class="login-box-bg">
-	                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<a href="forgot_password.php" class="forget">Forgot Password?</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.php" class="forget">Register Now</a></td>
+	                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<a class="links" href="forgot_password.php">Forgot Password?</a><br />&nbsp;&nbsp;&nbsp;&nbsp;<a class="links" href="register.php">Register Now</a></td>
                     </tr>
 					<tr class="login-box-bg">
 	                    <td height="5" colspan="3"></td>
@@ -72,21 +83,6 @@ include("cart.php");
 <div class="main_body">
 <div class="frame_top"></div>
 <span class="clearit">&nbsp;</span>
-<div class="header">
-<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" id="menu">
-  <tr>
-    
-    <td width="60" align="center" valign="middle"><a href="index.php">Home</a></td>
-    <td width="62" align="center" valign="middle"><a href="about.php">About Us</a></td>
-    <td width="93" align="center" valign="middle"><a href="store.php">Store</a></td>
-    <td width="88" align="center" valign="middle"><a href="#">Shopping Cart</a></td>
-    <td width="71" align="center" valign="middle" class="no-border"><a href="profile.php">Profile</a></td>
-      </tr>
-  <tr>
-    
-  </tr>
-</table>
-</div>
 <div class="content">
 	
 	
