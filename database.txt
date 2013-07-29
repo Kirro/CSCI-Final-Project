@@ -10,6 +10,7 @@ customers
 | name        | varchar(20) | YES  |     | NULL    |       |
 | address     | varchar(20) | YES  |     | NULL    |       |
 | phonenumber | varchar(20) | YES  |     | NULL    |       |
+| gender      | int(11)     | YES  |     | NULL    |       |
 +-------------+-------------+------+-----+---------+-------+
 
 inventory
