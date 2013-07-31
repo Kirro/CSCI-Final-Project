@@ -97,7 +97,7 @@ function check_valid (th)
 
 	<form action="register_db.php" method="post" name="fnm">
 		
-		<table align="center" border="0" style="border:1px #003399 solid" width="50%">
+		<table align="center" border="0" width="50%">
 			
 			<tr>
 				<td colspan="2" height="25" align="center">

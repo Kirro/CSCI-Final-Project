@@ -8,13 +8,12 @@ $connect = mysql_connect("localhost","c43726","1db23") or die("Cannot connect to
 mysql_select_db("c43726") or die("Cannot select DB");
 function printForm ($inumb)
 {
-    setlocale(LC_MONETARY, 'en_US');
     $numb = $inumb;
     $sql = "SELECT * FROM inventory WHERE itemID ='$numb';";
     $result = mysql_query($sql);
     $row = mysql_fetch_array($result);
     $itemName = $row['item'];
-    $price = money_format("%i",$row['price']);
+    $price = $row['price'];
     echo
         '<img src="img/'.$numb.'.jpg" alt="Item '.$numb.'"><br>
     '.$itemName.'<br>$'.$price.'<br><form action="addtocart.php" method=post>
@@ -29,10 +28,10 @@ function printForm ($inumb)
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Online Store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Online Store</title>
 
-<link href="css/design.css" rel="stylesheet" type="text/css" />
+    <link href="css/design.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body >
@@ -46,21 +45,21 @@ function printForm ($inumb)
     </div>
 </div>
 <div class="container2">
-<div class="sidebar_left">
-<img src="img/logo.gif" height="200" width="200" alt="panther" align="middle"/><br/><br/>
-<form action="login_attempt.php" method="post">
-					<table width="178" border="0" align="center" cellpadding="0" cellspacing="0">
+    <div class="sidebar_left">
+        <img src="img/logo.gif" height="200" width="200" alt="panther" align="middle"/><br/><br/>
+        <form action="login_attempt.php" method="post">
+            <table width="178" border="0" align="center" cellpadding="0" cellspacing="0">
 
 
-					<?php
-						if (isset($_SESSION['MSG']))
-					echo
-						'<tr class="login-box-bg">
-					  		<td>&nbsp;</td>
-					  		<td class="error-msg" >'.$_SESSION['MSG']. '&nbsp; </td>
+                <?php
+                if (isset($_SESSION['MSG']))
+                    echo
+                        '<tr class="login-box-bg">
+                              <td>&nbsp;</td>
+                              <td class="error-msg" >'.$_SESSION['MSG']. '&nbsp; </td>
 					  		<td>&nbsp;</td>
 					  	</tr>';
-                    else echo '
+                else echo '
 
 					<tr class="login-box-bg">
 	                    <td colspan="3" height="25">
@@ -95,53 +94,19 @@ function printForm ($inumb)
                       <input name="image"  type="image" src="img/login.jpg" /></td>
                     </tr>';?>
 
-			</table>
-		</form>
-</div>
-<div class="main_body flow">
-    <table cellspacing="20">
-        <tr>
-            <td>
-                <?php printForm(1)?>
-            </td>
-            <td>
-                <?php printForm(2)?>
-            </td>
-            <td>
-                <?php printForm(3)?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php printForm(4)?>
-            </td>
-            <td>
-                <?php printForm(5)?>
-            </td>
-            <td>
-                <?php printForm(6)?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php printForm(7)?>
-            </td>
-            <td>
-                <?php printForm(8)?>
-            </td>
-            <td>
-                <?php printForm(9)?>
-            </td>
-        </tr>
-    </table>
-<div class="frame_top"></div>
-<span class="clearit">&nbsp;</span>
-<div class="content">
-</div>
-<div class="frame_bottom"></div>
-</div>
-<div class="sidebar_right">
-</div>
+            </table>
+        </form>
+    </div>
+    <div class="main_body flow">
+        If we told you who we are, we'd have to magically destroy your entire existence in all possible universes.
+        <div class="frame_top"></div>
+        <span class="clearit">&nbsp;</span>
+        <div class="content">
+        </div>
+        <div class="frame_bottom"></div>
+    </div>
+    <div class="sidebar_right">
+    </div>
 </div>
 </body>
 </html>
