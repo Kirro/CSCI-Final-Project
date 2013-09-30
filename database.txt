@@ -9,7 +9,7 @@ customers
 | email       | varchar(20) | YES  |     | NULL    |       |
 | name        | varchar(20) | YES  |     | NULL    |       |
 | address     | varchar(20) | YES  |     | NULL    |       |
-| phonenumber | varchar(20) | YES  |     | NULL    |       |
+| phonenumber | varchar(20) | YES  |     | NULL    |       |231413
 | gender      | int(11)     | YES  |     | NULL    |       |
 +-------------+-------------+------+-----+---------+-------+
 
